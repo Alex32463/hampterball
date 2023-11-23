@@ -27,7 +27,7 @@ public class LevelGenerator : MonoBehaviour
     }
     private void GenerateStartingArea()
     {
-        for (int x = 0; x < courseWidth; x++)
+        for (int x = 0; x < courseWidth * 6; x++)
         {
             GenerateRow(x);
         }
@@ -43,13 +43,28 @@ public class LevelGenerator : MonoBehaviour
     {
         for (int y = 0; y < courseWidth + 2; y++)
         {
+            int obstacleOrNot = Random.Range(0, 100);
             if (y == 0 || y == courseWidth - 1 || x == 0)
             {
-                levelRow[y] = sideWall;
+                if (obstacleOrNot < sideObstacleAmount && levelRowCount > 6)
+                {
+                    levelRow[y] = sideObstacles[Random.Range(0,(floorObstacles.Length - 1))];
+                }
+                else
+                {
+                    levelRow[y] = sideWall;
+                }              
             }
             else
             {
-                levelRow[y] = floorPlane;
+                if (obstacleOrNot < floorObstacleAmount && levelRowCount > 6) 
+                {
+                    levelRow[y] = floorObstacles[Random.Range(0,(floorObstacles.Length - 1))];
+                }
+                else
+                {
+                    levelRow[y] = floorPlane;
+                }
             }
         }
         levelTiles.Add(levelRow);
