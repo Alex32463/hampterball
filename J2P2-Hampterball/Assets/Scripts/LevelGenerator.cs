@@ -11,8 +11,11 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] GameObject sideWall;
     [SerializeField] GameObject[] sideObstacles;
     [SerializeField] int courseWidth;
-    [SerializeField] float floorObstacleAmount = 25;
-    [SerializeField] float sideObstacleAmount = 25;
+    [SerializeField] int initialGenerateAhead;
+    [SerializeField] float floorObstacleAmount = 25f;
+    [SerializeField] float sideObstacleAmount = 25f;
+    [SerializeField] float generateDistance = 25f;
+    [SerializeField] float removeDistance = 10f;
     private List<GameObject[]> levelTiles = new List<GameObject[]>();
     private GameObject[] levelRow;
     private int levelRowCount = 0;
@@ -23,24 +26,28 @@ public class LevelGenerator : MonoBehaviour
     }
     void Update()
     {
-        GenerateCourse();
+        float playerZ = playerPosition.position.z;
+        if (playerZ + generateDistance > levelRowCount * 2)
+        {
+            GenerateRow(levelRowCount);
+        }
+        if (levelTiles.Count > 0 && playerZ - removeDistance > (levelTiles[0][0].transform.position.x / 2))
+        {
+            DestroyRow(levelTiles[0]);
+            levelTiles.RemoveAt(0);
+        }
     }
     private void GenerateStartingArea()
     {
-        for (int x = 0; x < courseWidth * 6; x++)
+        for (int x = 0; x < courseWidth + initialGenerateAhead; x++)
         {
             GenerateRow(x);
         }
     }
-    private void GenerateCourse()
-    {
-        if (playerPosition.position.x + 25 > levelRowCount)
-        {
-            GenerateRow(levelRowCount);
-        }
-    }
     private void GenerateRow(int x)
     {
+        GameObject[] levelRow = new GameObject[courseWidth + 2];
+
         for (int y = 0; y < courseWidth + 2; y++)
         {
             int obstacleOrNot = Random.Range(0, 100);
@@ -48,18 +55,18 @@ public class LevelGenerator : MonoBehaviour
             {
                 if (obstacleOrNot < sideObstacleAmount && levelRowCount > 6)
                 {
-                    levelRow[y] = sideObstacles[Random.Range(0,(floorObstacles.Length - 1))];
+                    levelRow[y] = sideObstacles[Random.Range(0, (floorObstacles.Length - 1))];
                 }
                 else
                 {
                     levelRow[y] = sideWall;
-                }              
+                }
             }
             else
             {
-                if (obstacleOrNot < floorObstacleAmount && levelRowCount > 6) 
+                if (obstacleOrNot < floorObstacleAmount && levelRowCount > 6)
                 {
-                    levelRow[y] = floorObstacles[Random.Range(0,(floorObstacles.Length - 1))];
+                    levelRow[y] = floorObstacles[Random.Range(0, (floorObstacles.Length - 1))];
                 }
                 else
                 {
@@ -67,11 +74,21 @@ public class LevelGenerator : MonoBehaviour
                 }
             }
         }
+
         levelTiles.Add(levelRow);
+
         for (int z = 0; z < courseWidth; z++)
         {
             Instantiate(levelRow[z], new Vector3(z * 2, 0, x * 2), Quaternion.identity);
         }
+
         levelRowCount++;
+    }
+    private void DestroyRow(GameObject[] row)
+    {
+        foreach (GameObject block in row)
+        {
+            Destroy(block);
+        }
     }
 }
