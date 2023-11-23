@@ -34,7 +34,7 @@ public class LevelGenerator : MonoBehaviour
     }
     private void GenerateCourse()
     {
-        if (playerPosition.position.x > levelRowCount + 25)
+        if (playerPosition.position.x + 25 > levelRowCount)
         {
             GenerateRow(levelRowCount);
         }
@@ -70,7 +70,7 @@ public class LevelGenerator : MonoBehaviour
         levelTiles.Add(levelRow);
         for (int z = 0; z < courseWidth; z++)
         {
-            Instantiate(levelRow[z], new Vector3(x * 2, 0, z * 2), Quaternion.identity);
+            Instantiate(levelRow[z], new Vector3(z * 2, 0, x * 2), Quaternion.identity);
         }
         levelRowCount++;
     }
