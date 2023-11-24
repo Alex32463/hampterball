@@ -12,7 +12,7 @@ public class FollowPlayerCam : MonoBehaviour
     void LateUpdate()
     {
         Vector3 nuPosition = target.position + offset;
-        Vector3 smoothPosition = Vector3.Lerp(transform.position, nuPosition, smoothSpeed);
+        Vector3 smoothPosition = Vector3.Lerp(transform.position, nuPosition, smoothSpeed * Time.deltaTime);
         transform.position = smoothPosition;
     }
 }
