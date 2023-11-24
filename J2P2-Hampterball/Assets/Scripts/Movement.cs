@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class Movement : MonoBehaviour
 {
     [SerializeField] float speed = 2;
-    Rigidbody rb;
+    public Rigidbody rb;
     private void Start()
     {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
