@@ -247,14 +247,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2023771353}
-  floorPlane: {fileID: 5892097853085281380, guid: 87db18c155e186d4aa5caa1a63e8e2f7,
-    type: 3}
-  floorObstacles:
-  - {fileID: 4751244685741593435, guid: 09309124ac7deab48ae747851e299b13, type: 3}
-  sideWall: {fileID: 9154558635487612807, guid: 9cac68a63ba18324c99b5ea56bd3535c,
-    type: 3}
-  sideObstacles:
-  - {fileID: 2699605103612975983, guid: 3ec867d05872dc64393fdf4c29af2e36, type: 3}
+  levelChunk:
+  - {fileID: 8586003896554636286, guid: fde47b28485cdf54689169cb8b4cc0e0, type: 3}
+  - {fileID: 7473245124396871144, guid: 1c211d1f2c83f9843a360f3d210dac69, type: 3}
+  - {fileID: 4778529137185461589, guid: d921b5307c1fe674c99058dec46834f5, type: 3}
+  - {fileID: 1647323331544505357, guid: 4da266d67750b95469233a04dae85ad3, type: 3}
   courseWidth: 9
   initialGenerateAhead: 5
   tileSize: 3
@@ -418,14 +415,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaf6dda9e3a5e434fad966f1f2305e11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 2023771355}
-  movementSpeed: 1
-  orientation: {fileID: 2023771359}
-  horizontalInput: 0
-  verticalInput: 0
-  jumpDelay: 1
-  lastTimeJumped: 0
-  movementDirection: {x: 0, y: 0, z: 0}
 --- !u!54 &2023771355
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -6,15 +6,10 @@ using UnityEngine.UIElements;
 public class LevelGenerator : MonoBehaviour
 {
     [SerializeField] GameObject player;
-    [SerializeField] GameObject floorPlane;
-    [SerializeField] GameObject[] floorObstacles;
-    [SerializeField] GameObject sideWall;
-    [SerializeField] GameObject[] sideObstacles;
+    [SerializeField] GameObject[] levelChunk;
     [SerializeField] int courseWidth;
     [SerializeField] int initialGenerateAhead;
     [SerializeField] float tileSize = 2;
-    [SerializeField] float floorObstacleAmount = 25f;
-    [SerializeField] float sideObstacleAmount = 25f;
     [SerializeField] float generateDistance = 25f;
     [SerializeField] float removeDistance = 10f;
     private List<GameObject[]> levelTiles = new List<GameObject[]>();
@@ -22,7 +17,7 @@ public class LevelGenerator : MonoBehaviour
     void Start()
     {
         GenerateStartingArea();
-        Instantiate(player, new Vector3(tileSize * courseWidth / 2, 5 , tileSize * courseWidth / 2), Quaternion.identity);
+        player.transform.position = new Vector3(tileSize * courseWidth / 2, 5 , tileSize * courseWidth / 2);
     }
     void Update()
     {
@@ -46,33 +41,11 @@ public class LevelGenerator : MonoBehaviour
     }
     private void GenerateRow(int x)
     {
-        GameObject[] levelRow = new GameObject[courseWidth + 2];
+        GameObject[] levelRow = new GameObject[courseWidth];
 
-        for (int y = 0; y < courseWidth + 2; y++)
+        for (int y = 0; y < courseWidth; y++)
         {
-            int obstacleOrNot = Random.Range(0, 100);
-            if (y == 0 || y == courseWidth - 1 || x == 0)
-            {
-                if (obstacleOrNot < sideObstacleAmount && levelRowCount > 6)
-                {
-                    levelRow[y] = sideObstacles[Random.Range(0, (floorObstacles.Length - 1))];
-                }
-                else
-                {
-                    levelRow[y] = sideWall;
-                }
-            }
-            else
-            {
-                if (obstacleOrNot < floorObstacleAmount && levelRowCount > 6)
-                {
-                    levelRow[y] = floorObstacles[Random.Range(0, (floorObstacles.Length - 1))];
-                }
-                else
-                {
-                    levelRow[y] = floorPlane;
-                }
-            }
+            levelRow[y] = levelChunk[Random.Range(0, levelChunk.Length)];
         }
 
         levelTiles.Add(levelRow);
