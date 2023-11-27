@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
     public Rigidbody rb;
     private void Start()
     {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
         rb = GetComponent<Rigidbody>();
     }
     private void FixedUpdate()

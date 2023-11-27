@@ -6,13 +6,13 @@ public class FollowPlayerCam : MonoBehaviour
 {
     public Transform target;
 
-    public float smoothSpeed = 0.125f;
+    public float smoothSpeed;
     public Vector3 offset;
 
-    void LateUpdate()
+    void Update()
     {
         Vector3 nuPosition = target.position + offset;
-        Vector3 smoothPosition = Vector3.Lerp(transform.position, nuPosition, smoothSpeed);
+        Vector3 smoothPosition = Vector3.Lerp(transform.position, nuPosition, smoothSpeed * Time.deltaTime);
         transform.position = smoothPosition;
     }
 }
