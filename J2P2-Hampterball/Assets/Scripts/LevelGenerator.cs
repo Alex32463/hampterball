@@ -17,7 +17,6 @@ public class LevelGenerator : MonoBehaviour
     void Start()
     {
         GenerateStartingArea();
-        player.transform.position = new Vector3(tileSize * courseWidth / 2, 5 , tileSize * courseWidth / 2);
     }
     void Update()
     {
