@@ -246,21 +246,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57be392b9e602fb4981e41d09939ba71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPosition: {fileID: 2125722701}
-  floorPlane: {fileID: 5892097853085281380, guid: 87db18c155e186d4aa5caa1a63e8e2f7,
-    type: 3}
-  floorObstacles:
-  - {fileID: 4751244685741593435, guid: 09309124ac7deab48ae747851e299b13, type: 3}
-  sideWall: {fileID: 9154558635487612807, guid: 9cac68a63ba18324c99b5ea56bd3535c,
-    type: 3}
-  sideObstacles:
-  - {fileID: 2699605103612975983, guid: 3ec867d05872dc64393fdf4c29af2e36, type: 3}
-  courseWidth: 7
+  player: {fileID: 2023771353}
+  levelChunk:
+  - {fileID: 8586003896554636286, guid: fde47b28485cdf54689169cb8b4cc0e0, type: 3}
+  - {fileID: 7473245124396871144, guid: 1c211d1f2c83f9843a360f3d210dac69, type: 3}
+  - {fileID: 4778529137185461589, guid: d921b5307c1fe674c99058dec46834f5, type: 3}
+  - {fileID: 1647323331544505357, guid: 4da266d67750b95469233a04dae85ad3, type: 3}
+  courseWidth: 9
   initialGenerateAhead: 5
+  tileSize: 3
   floorObstacleAmount: 25
   sideObstacleAmount: 25
   generateDistance: 25
-  removeDistance: 50
+  removeDistance: 25
 --- !u!4 &963467822
 Transform:
   m_ObjectHideFlags: 0
@@ -381,10 +379,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fccc39dbd41ca4bbf4f34e65d0d2b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 2125722701}
+  target: {fileID: 2023771359}
   smoothSpeed: 0.125
   offset: {x: 0, y: 5, z: -2}
---- !u!1 &2125722697
+--- !u!1 &2023771353
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -392,12 +390,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2125722701}
-  - component: {fileID: 2125722700}
-  - component: {fileID: 2125722699}
-  - component: {fileID: 2125722698}
-  - component: {fileID: 2125722702}
-  - component: {fileID: 2125722703}
+  - component: {fileID: 2023771359}
+  - component: {fileID: 2023771358}
+  - component: {fileID: 2023771357}
+  - component: {fileID: 2023771356}
+  - component: {fileID: 2023771355}
+  - component: {fileID: 2023771354}
   m_Layer: 0
   m_Name: PlayerTemp
   m_TagString: Untagged
@@ -405,13 +403,52 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &2125722698
+--- !u!114 &2023771354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023771353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaf6dda9e3a5e434fad966f1f2305e11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &2023771355
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023771353}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &2023771356
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2125722697}
+  m_GameObject: {fileID: 2023771353}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -428,13 +465,13 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &2125722699
+--- !u!23 &2023771357
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2125722697}
+  m_GameObject: {fileID: 2023771353}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -470,21 +507,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &2125722700
+--- !u!33 &2023771358
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2125722697}
+  m_GameObject: {fileID: 2023771353}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &2125722701
+--- !u!4 &2023771359
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2125722697}
+  m_GameObject: {fileID: 2023771353}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6, y: 2, z: 6}
@@ -493,48 +530,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &2125722702
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2125722697}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &2125722703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2125722697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaf6dda9e3a5e434fad966f1f2305e11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 2125722702}
-  movementSpeed: 1
-  orientation: {fileID: 2125722701}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -542,4 +537,4 @@ SceneRoots:
   - {fileID: 1307685815}
   - {fileID: 898465121}
   - {fileID: 963467822}
-  - {fileID: 2125722701}
+  - {fileID: 2023771359}
