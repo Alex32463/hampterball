@@ -682,11 +682,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57be392b9e602fb4981e41d09939ba71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   player: {fileID: 0}
   levelChunk: []
   courseWidth: 7
   initialGenerateAhead: 5
   tileSize: 2
+=======
+  player: {fileID: 1621880049}
+  levelChunk:
+  - {fileID: 8586003896554636286, guid: fde47b28485cdf54689169cb8b4cc0e0, type: 3}
+  - {fileID: 7473245124396871144, guid: 1c211d1f2c83f9843a360f3d210dac69, type: 3}
+  - {fileID: 4778529137185461589, guid: d921b5307c1fe674c99058dec46834f5, type: 3}
+  - {fileID: 1647323331544505357, guid: 4da266d67750b95469233a04dae85ad3, type: 3}
+  courseWidth: 7
+  initialGenerateAhead: 5
+  tileSize: 3
+>>>>>>> Stashed changes
   generateDistance: 25
   removeDistance: 10
 --- !u!4 &1177930219
