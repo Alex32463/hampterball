@@ -248,15 +248,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2023771353}
   levelChunk:
-  - {fileID: 8586003896554636286, guid: fde47b28485cdf54689169cb8b4cc0e0, type: 3}
-  - {fileID: 7473245124396871144, guid: 1c211d1f2c83f9843a360f3d210dac69, type: 3}
-  - {fileID: 4778529137185461589, guid: d921b5307c1fe674c99058dec46834f5, type: 3}
-  - {fileID: 1647323331544505357, guid: 4da266d67750b95469233a04dae85ad3, type: 3}
-  courseWidth: 9
+  - {fileID: 1860483086670994420, guid: cc0f13d46f20a764481ea94361542cbd, type: 3}
+  - {fileID: 8568427350774303904, guid: 0d0bf04c0b4d6bf48879bf0ce380cade, type: 3}
+  courseWidth: 5
   initialGenerateAhead: 5
   tileSize: 3
-  floorObstacleAmount: 25
-  sideObstacleAmount: 25
   generateDistance: 25
   removeDistance: 25
 --- !u!4 &963467822
@@ -380,7 +376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 2023771359}
-  smoothSpeed: 0.125
+  smoothSpeed: 1
   offset: {x: 0, y: 5, z: -2}
 --- !u!1 &2023771353
 GameObject:
