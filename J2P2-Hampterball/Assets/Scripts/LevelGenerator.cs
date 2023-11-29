@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,8 +11,8 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] int courseWidth;
     [SerializeField] int initialGenerateAhead;
     [SerializeField] float tileSize = 2;
-    [SerializeField] float generateDistance = 25f;
-    [SerializeField] float removeDistance = 10f;
+    [SerializeField] int generateDistance = 25;
+    [SerializeField] int removeDistance = 10;
     private List<GameObject[]> levelTiles = new List<GameObject[]>();
     private int levelRowCount = 0;
     void Start()
@@ -21,15 +22,16 @@ public class LevelGenerator : MonoBehaviour
     void Update()
     {
         float playerZ = player.transform.position.z;
-        if (playerZ + generateDistance > levelRowCount * tileSize)
+        while (playerZ + generateDistance > levelRowCount * tileSize)
         {
-            GenerateRow(levelRowCount);
-        }
-        if (levelTiles.Count > 0 && playerZ - removeDistance > (levelTiles[0][0].transform.position.x / tileSize))
-        {
-            DestroyRow(levelTiles[0]);
-            levelTiles.RemoveAt(0);
-        }
+            GenerateRow(levelRowCount);        
+            if (levelTiles.Count > 0 && playerZ - removeDistance > (levelTiles[0][0].transform.position.z / tileSize))
+            {
+                Debug.Log("if statement passed");
+                DestroyRow(levelTiles[0]);
+                levelTiles.RemoveAt(0);
+            }
+        }  
     }
     private void GenerateStartingArea()
     {
@@ -44,7 +46,7 @@ public class LevelGenerator : MonoBehaviour
 
         for (int y = 0; y < courseWidth; y++)
         {
-            levelRow[y] = levelChunk[Random.Range(0, levelChunk.Length)];
+            levelRow[y] = levelChunk[UnityEngine.Random.Range(0, levelChunk.Length)];
         }
 
         levelTiles.Add(levelRow);
@@ -57,9 +59,11 @@ public class LevelGenerator : MonoBehaviour
     }
     private void DestroyRow(GameObject[] row)
     {
+        Debug.Log("Destroy row");
         foreach (GameObject block in row)
         {
-            Destroy(block);
+            Debug.Log("Destroy block");
+            levelTiles.Remove(levelTiles[0]);
         }
     }
 }
