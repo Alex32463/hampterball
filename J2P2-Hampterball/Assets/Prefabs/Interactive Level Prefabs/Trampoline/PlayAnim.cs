@@ -9,7 +9,7 @@ public class PlayAnim : MonoBehaviour
     private Animator animator;
     public bool pressedE;
 
-    [SerializeField] public Movement playerMovement; // Gets PlayerMovent script
+    [SerializeField] public Movement playerMovement; // Gets PlayerMovent script.
     [SerializeField] private float bounceHeight;
  
 
@@ -18,30 +18,25 @@ public class PlayAnim : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    // Checks if the playes is collided with the collider of the bouncepad
+    // Checks if the player is collided with the collider of the bouncepad.
     void OnTriggerStay(Collider collision)
     {
-        // (THEN) If the playes is collided with the collider of the bouncepad
+        // (THEN) If the playes is collided with the collider of the bouncepad.
         if (collision.CompareTag("Player"))
         {
             animator.SetTrigger("E");
             pressedE = true;
         }
+        // If pressed is true it adds force so the player shoots up with the bouncepad.
         if (pressedE == true)
         {
             playerMovement.rb.AddForce(transform.up * bounceHeight);
         }
-        if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("Armature|ArmatureAction"))
-        {
-            animator.ResetTrigger("E");
-        }
-    }
-        private void OnTriggerExit(Collider collision)
-    {
-        // Checks if the playes is NOT collided with the collider of the bouncepad
-        if (collision.CompareTag("Player"))
+        // Checks if the animation is playing. if it does reset the trigger called "E".
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Armature|ArmatureAction"))
         {
             pressedE = false;
+            animator.ResetTrigger("E");
         }
     }
 }
