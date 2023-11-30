@@ -7,7 +7,7 @@ public class Buttons : MonoBehaviour
 {
     public void GoToGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Main");
     }
 
     public void LeaveGame()
@@ -17,7 +17,7 @@ public class Buttons : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("MainMenus");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void Tutorial()
