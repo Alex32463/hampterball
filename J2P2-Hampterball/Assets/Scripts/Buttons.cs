@@ -1,27 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour
 {
+    private void Start()
+    {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+    }
     public void GoToGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Main");
     }
-
-    public void LeaveGame()
+    public void RetryButton()
     {
-        Application.Quit();
+        SceneManager.LoadScene("Main");
     }
-
     public void MainMenu()
     {
-        SceneManager.LoadScene("MainMenus");
+        SceneManager.LoadScene("MainMenu");
     }
-
     public void Tutorial()
     {
         SceneManager.LoadScene("Tutorial");
+    }
+    public void LeaveGame()
+    {
+        Application.Quit();
     }
 }

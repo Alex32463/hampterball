@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1832839003}
-  levelChunk:
+  levelChunks:
   - {fileID: 1860483086670994420, guid: cc0f13d46f20a764481ea94361542cbd, type: 3}
   - {fileID: 8568427350774303904, guid: 0d0bf04c0b4d6bf48879bf0ce380cade, type: 3}
   courseWidth: 5
@@ -712,6 +712,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1832839004}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 95a1c179de803354794b9351c3fe584c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1832839012}
   m_SourcePrefab: {fileID: 100100000, guid: 95a1c179de803354794b9351c3fe584c, type: 3}
 --- !u!1001 &1755797329
 PrefabInstance:
@@ -854,6 +858,20 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1347421488}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1832839012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832839003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c30474fb12808084faafea9aa0eedc54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  rb: {fileID: 1832839005}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
