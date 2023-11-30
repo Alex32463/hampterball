@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -26,5 +27,10 @@ public class Movement : MonoBehaviour
         var moveVertical = Input.acceleration.y;
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         rb.AddForce(movement * speed * 2);
+    }
+
+    public static explicit operator GameObject(Movement v)
+    {
+        throw new NotImplementedException();
     }
 }
