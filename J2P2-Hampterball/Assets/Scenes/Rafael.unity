@@ -242,19 +242,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.01
   m_Center: {x: -0.000000003259629, y: -0.000000003259629, z: 0}
---- !u!114 &532456409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 532456394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9cfd2b93104a4d48a439e1e32ab7463, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ball: {fileID: 1665431089638243225}
 --- !u!54 &532456413
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -282,6 +269,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &532456417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532456394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7a901cdaaeb994b925d3e30fae88d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collider: {fileID: 1665431089638243235}
 --- !u!1 &588449325
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,6 +425,7 @@ GameObject:
   m_Component:
   - component: {fileID: 885003048}
   - component: {fileID: 885003047}
+  - component: {fileID: 885003049}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -509,6 +510,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &885003049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885003046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &906829515
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,15 +865,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 95a1c179de803354794b9351c3fe584c,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 532456409}
+      addedObject: {fileID: 532456413}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 95a1c179de803354794b9351c3fe584c,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 532456413}
+      addedObject: {fileID: 532456417}
   m_SourcePrefab: {fileID: 100100000, guid: 95a1c179de803354794b9351c3fe584c, type: 3}
---- !u!4 &1665431089638243225 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6582466982781854988, guid: f584d9986aa41cf4ea40fd318b3bb136,
+--- !u!65 &1665431089638243235 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 5301295947645771860, guid: f584d9986aa41cf4ea40fd318b3bb136,
     type: 3}
   m_PrefabInstance: {fileID: 3902156433493798672}
   m_PrefabAsset: {fileID: 0}
@@ -931,6 +955,21 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6582466982781854988, guid: f584d9986aa41cf4ea40fd318b3bb136,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582466982781854988, guid: f584d9986aa41cf4ea40fd318b3bb136,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582466982781854988, guid: f584d9986aa41cf4ea40fd318b3bb136,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582466982781854988, guid: f584d9986aa41cf4ea40fd318b3bb136,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -998,6 +1037,6 @@ SceneRoots:
   - {fileID: 3389371332757291770}
   - {fileID: 982120430}
   - {fileID: 906829519}
-  - {fileID: 3902156433493798672}
   - {fileID: 2053291303}
+  - {fileID: 3902156433493798672}
   - {fileID: 522039083}
