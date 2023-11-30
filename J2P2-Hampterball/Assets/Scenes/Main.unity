@@ -237,12 +237,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1832839003}
   levelChunk:
-  - {fileID: 7473245124396871144, guid: 1c211d1f2c83f9843a360f3d210dac69, type: 3}
-  - {fileID: 4778529137185461589, guid: d921b5307c1fe674c99058dec46834f5, type: 3}
-  - {fileID: 1647323331544505357, guid: 4da266d67750b95469233a04dae85ad3, type: 3}
+  - {fileID: 1860483086670994420, guid: cc0f13d46f20a764481ea94361542cbd, type: 3}
+  - {fileID: 8568427350774303904, guid: 0d0bf04c0b4d6bf48879bf0ce380cade, type: 3}
   courseWidth: 5
   initialGenerateAhead: 5
-  tileSize: 3
+  tileSize: 6
   generateDistance: 25
   removeDistance: 10
 --- !u!4 &275170962
@@ -272,6 +271,7 @@ GameObject:
   - component: {fileID: 803751193}
   - component: {fileID: 803751192}
   - component: {fileID: 803751195}
+  - component: {fileID: 803751196}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -346,13 +346,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803751191}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.23264767, y: -0, z: -0, w: 0.9725612}
+  m_LocalRotation: {x: 0.4441195, y: -0, z: -0, w: 0.8959676}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 26.906, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 52.734, y: 0, z: 0}
 --- !u!114 &803751195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,6 +397,21 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &803751196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803751191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33fccc39dbd41ca4bbf4f34e65d0d2b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1832839009}
+  smoothSpeed: 10
+  offset: {x: 0, y: 20, z: -10}
 --- !u!1 &989477899
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,6 +799,12 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.01
   m_Center: {x: -0.000000003259629, y: -0.000000003259629, z: 0}
+--- !u!4 &1832839009 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 95a1c179de803354794b9351c3fe584c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1347421488}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
