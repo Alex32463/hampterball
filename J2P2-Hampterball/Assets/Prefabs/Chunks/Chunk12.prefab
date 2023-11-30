@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4194968174149688122}
   m_Layer: 0
-  m_Name: Check12
+  m_Name: Chunk12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -439,7 +439,7 @@ PrefabInstance:
     - target: {fileID: 7848218929720844368, guid: 0e816c95aba863243ba4ddbdff6deb81,
         type: 3}
       propertyPath: m_Name
-      value: Check12
+      value: Chunk12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
