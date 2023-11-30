@@ -76,7 +76,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3cac61fa5fc6be64b8ede0bf095fc908,
         type: 3}
       propertyPath: m_Name
-      value: Hole
+      value: hole
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
