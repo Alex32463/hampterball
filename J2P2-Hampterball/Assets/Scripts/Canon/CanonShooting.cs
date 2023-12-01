@@ -51,7 +51,7 @@ public class CanonShooting : MonoBehaviour
             fuseParticles.Play();
 
             StartCoroutine(Shooting());
-        }       
+        }  
     }
 
     IEnumerator Shooting()
