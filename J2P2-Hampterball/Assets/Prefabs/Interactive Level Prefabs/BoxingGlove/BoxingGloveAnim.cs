@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class BoxingGloveAnim : MonoBehaviour
+public class BoxingGloveAnimation : MonoBehaviour
 {
     Animator animator;
     Ray ray;

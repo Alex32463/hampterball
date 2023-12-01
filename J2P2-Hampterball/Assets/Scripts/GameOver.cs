@@ -1,20 +1,32 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-public class GameOver : MonoBehaviour
+using UnityEngine.UI;
+public class SceneManagement : MonoBehaviour
 {
-    private void Start()
+    GameObject player;
+    void Start()
     {
-        Screen.sleepTimeout = SleepTimeout.NeverSleep;
-    }
-    public void RetryButton()
-    {
-        SceneManager.LoadScene("Main");
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x, -4, gameObject.transform.position.z);
+        player = FindObjectOfType<Movement>().gameObject; // Zoekt Player GameObject
     }
 
-    public void MainMenu()
+    void Update()
     {
-        SceneManager.LoadScene("Main menu");
+        if (player != null)
+        {
+            // Als de Player lager is dan de gameObject (SceneManagement) ga naar aangegeven scene.
+            if (player.transform.position.y < gameObject.transform.position.y)
+            {
+                GameOverScene(SceneManager.LoadScene); // Pakt GameOver scene
+            }
+        }
     }
-
+    // Pakt alle informatie voor GameOver Scene
+    public void GameOverScene(Action<string, LoadSceneMode> loadScene)
+    {
+        SceneManager.LoadScene("GameOver");
+    }
 }
