@@ -15,7 +15,6 @@ public class Movement : MonoBehaviour
     {
         var moveHorizontal = Input.acceleration.x;
         var moveVertical = Mathf.Clamp(Input.acceleration.y + 0.7f, -0.4f, 0.3f);
-        print(moveVertical);
         Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical);
         rb.AddForce(movement * speed * 6);
     }
