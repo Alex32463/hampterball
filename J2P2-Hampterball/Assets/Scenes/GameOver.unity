@@ -152,14 +152,14 @@ RectTransform:
   m_GameObject: {fileID: 543292608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.12455123, y: 0.36599842, z: 0.12455123}
+  m_LocalScale: {x: 0.092622526, y: 0.27217472, z: 0.092622526}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2131835301}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -150, y: -150}
+  m_AnchoredPosition: {x: -110.44, y: -86}
   m_SizeDelta: {x: 1297, y: 446}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &543292610
@@ -500,14 +500,14 @@ RectTransform:
   m_GameObject: {fileID: 1414996581}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.22318208, y: 0.22318208, z: 0.22318208}
+  m_LocalScale: {x: 0.16596936, y: 0.16596936, z: 0.16596936}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2131835301}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.3266, y: 66.443}
+  m_AnchoredPosition: {x: 4.3266, y: 74.953995}
   m_SizeDelta: {x: 3740.25, y: 949.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1414996583
@@ -577,14 +577,14 @@ RectTransform:
   m_GameObject: {fileID: 1540548731}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.12455123, y: 0.36599842, z: 0.12455123}
+  m_LocalScale: {x: 0.092622526, y: 0.27217472, z: 0.092622526}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2131835301}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 150, y: -150}
+  m_AnchoredPosition: {x: 112.66, y: -86}
   m_SizeDelta: {x: 1297, y: 446}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1540548733
@@ -974,7 +974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
