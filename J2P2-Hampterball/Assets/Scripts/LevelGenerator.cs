@@ -33,12 +33,12 @@ public class LevelGenerator : MonoBehaviour
     }
     private void GenerateStartingArea()
     {
-        for (int x = 0; x < courseWidth + initialGenerateAhead; x++) 
+        for (int x = 0; x < courseWidth + initialGenerateAhead; x++) //the loops for the course with and the initialGeneratAhead distanse
         {
             GenerateRow(x); //generates a row for the starting area
         }
     }
-    private void GenerateRow(int x)
+    private void GenerateRow(int x) //
     {
         GameObject[] levelRow = new GameObject[courseWidth];
 

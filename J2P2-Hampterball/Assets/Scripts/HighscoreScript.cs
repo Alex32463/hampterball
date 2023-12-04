@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HighscoreScript : MonoBehaviour
@@ -10,53 +12,52 @@ public class HighscoreScript : MonoBehaviour
     [SerializeField] public Transform point;
     [SerializeField] public TMP_Text distanceText;
     [SerializeField] public TMP_Text highScoreText;
+    [SerializeField] private int numberOfHighScoresToShow = 5; // Aantal hoogste scores om weer te geven
 
-
+    private List<float> highScores = new List<float>();
     public float distance;
-    int coins = 0;
 
     void Start()
     {
         // Laad de hoogste score bij het starten van het spel
         LoadHighScore();
+        UpdateHighScoreText();
     }
 
     void Update()
     {
-        // Je bestaande code blijft hier hetzelfde
         distance = (point.transform.position - transform.position).magnitude;
-        distanceText.text = distance.ToString("F1") + "M" + "\nCoins: " + coins;
+        distanceText.text = distance.ToString("F1") + "M";
 
-        // Voeg punten toe na elke 10 meter
-        if (distance >= (coins + 1) * 10)
+        if (distance > 0 && !highScores.Contains(distance))
         {
-            coins++;
-        }
-        // Controleer of de huidige score hoger is dan de hoogste score
-        if (distance > highScore)
-        {
-            highScore = distance;
+            highScores.Add(distance);
+            highScores.Sort((a, b) => b.CompareTo(a));
 
-            // Update de tekst van de hoogste score
+            while (highScores.Count > numberOfHighScoresToShow)
+            {
+                highScores.RemoveAt(highScores.Count - 1);
+            }
+            SaveHighScores();
             UpdateHighScoreText();
-
-            // Sla de hoogste score op
-            SaveHighScore();
         }
+
     }
 
     void UpdateHighScoreText()
     {
-        // Update de tekst van de hoogste score in je UI
-        // Gebruik hiervoor distanceText of een andere tekstcomponent
-        // Laat het in het door jou gewenste formaat zien
-        highScoreText.text = highScore.ToString("F1") + "M";
+        string highScoresText = "\n";
+        for (int i = 0; i < highScores.Count; i++)
+        {
+            highScoresText += $"{i + 1}. {highScores[i].ToString("F1")}M\n";
+        }
+        highScoreText.text = highScoresText;
     }
 
-    void SaveHighScore()
+    void SaveHighScores()
     {
         // Sla de hoogste score op in een JSON-bestand
-        HighScoreData highScoreData = new HighScoreData { HighScore = highScore };
+        HighScoreData highScoreData = new HighScoreData { HighScore = highScores[0] };
         string json = JsonUtility.ToJson(highScoreData);
         System.IO.File.WriteAllText(highScoreFilePath, json);
     }
