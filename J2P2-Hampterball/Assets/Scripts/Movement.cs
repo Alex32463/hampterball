@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] float speed = 2;
+    float speed = 2;
     public Rigidbody rb;
     private void Start()
     {
@@ -16,7 +16,7 @@ public class Movement : MonoBehaviour
         var moveHorizontal = Input.acceleration.x;
         var moveVertical = Input.acceleration.y;
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        rb.AddForce(movement * speed * 2);
+        rb.AddForce(movement * speed * 3);
     }
 
     public static explicit operator GameObject(Movement v)
