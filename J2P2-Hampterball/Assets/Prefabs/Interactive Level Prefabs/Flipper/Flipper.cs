@@ -13,20 +13,21 @@ public class Flipper : MonoBehaviour
         animator = GetComponent<Animator>();
     }
     void Update()
-    {   
+    {
+        // If the animation is playing reset the animation (name: "Armature|ArmatureAction")
         if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("Armature|ArmatureAction"))
         {
-            animator.ResetTrigger("Hit");
+            animator.ResetTrigger("Hit"); // Resets animation trigget, so that it doesn't play animation twice \\
         }
+        // Checks if animation is playing or not
         if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("New State"))
         {
+            // (then) if the animation is not playing generate a random time to play the animation and generate a random time
             if (Time.time > nextActionTime)
             {
                 nextActionTime += period;
-                // Random time to play the animation
-                period = Random.Range(1, 5);
-
-                animator.SetTrigger("Hit");
+                period = Random.Range(1, 5); // Random time to play the animation \\
+                animator.SetTrigger("Hit"); // Starts the animation \\
             }
         }
     }

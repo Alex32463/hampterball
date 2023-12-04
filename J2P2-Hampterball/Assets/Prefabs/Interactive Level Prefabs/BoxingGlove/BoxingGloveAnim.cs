@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 public class BoxingGloveAnimation : MonoBehaviour
 {
     Animator animator;
-    Ray ray;
     RaycastHit hit;
     [SerializeField] LayerMask hitMask;
 
@@ -25,9 +24,10 @@ public class BoxingGloveAnimation : MonoBehaviour
         {
             animator.SetTrigger("raycast");
         }
+        // If the animation is playing reset the animation (name: "Armature|ArmatureAction")
         if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("Armature|ArmatureAction"))
         {
-            animator.ResetTrigger("raycast");
+            animator.ResetTrigger("raycast"); // Resets animation trigget, so that it doesn't play animation twice \\
         }
     }
 }
