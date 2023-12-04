@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class CanonShooting : MonoBehaviour
 {
-
     [SerializeField] Vector3 ballDirection;
 
     Animator canon;
     CanonInrange canonInrange;
-    GameObject canonEntrance;
+    [SerializeField] Transform canonEntrance;
     GameObject destination;
 
     [SerializeField] ParticleSystem fuseParticles;
     [SerializeField] ParticleSystem smokeParticles;
-
 
     GameObject hamsterBall;
     Rigidbody hamsterBallRb;
@@ -22,13 +20,10 @@ public class CanonShooting : MonoBehaviour
     void Start()
     {
         //Script CanonInrange
-        canonInrange = FindObjectOfType<CanonInrange>();
+        canonInrange = gameObject.GetComponent<CanonInrange>();
 
         //Canon Animation
-        canon = GetComponent<Animator>();
-
-        //Canon Entrance
-        canonEntrance = GameObject.FindWithTag("EntranceCanon");
+        canon = gameObject.GetComponent<Animator>();
 
         //HamsterBall
         hamsterBall = GameObject.FindWithTag("HamsterBall");
@@ -41,8 +36,7 @@ public class CanonShooting : MonoBehaviour
     void Update()
     {
         if (canonInrange.inRange == true)
-        {
-            
+        {            
             hamsterBall.transform.position = canonEntrance.transform.position;
             hamsterBallRb.freezeRotation = true;
             hamsterBall.transform.eulerAngles = new Vector3 (0.0f, 0.0f, 0.0f);
