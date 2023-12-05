@@ -14,9 +14,9 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         var moveHorizontal = Input.acceleration.x;
-        var moveVertical = Input.acceleration.y;
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        rb.AddForce(movement * speed * 3);
+        var moveVertical = Mathf.Clamp(Input.acceleration.y + 0.7f, -0.4f, 0.3f);
+        Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical);
+        rb.AddForce(movement * speed * 6);
     }
 
     public static explicit operator GameObject(Movement v)
