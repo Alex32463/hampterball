@@ -26,7 +26,7 @@ public class CanonShooting : MonoBehaviour
         canon = gameObject.GetComponent<Animator>();
 
         //HamsterBall
-        hamsterBall = GameObject.FindWithTag("HamsterBall");
+        hamsterBall = GameObject.FindWithTag("Player");
           
         //HamsterBall Rigidbody
         hamsterBallRb = hamsterBall.GetComponent<Rigidbody>();
