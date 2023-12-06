@@ -20,7 +20,7 @@ public class CanonInrange : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if(collision.CompareTag("HamsterBall"))
+        if(collision.CompareTag("Player"))
         {
             Debug.Log("Ball in range");
             inRange = true;
