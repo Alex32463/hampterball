@@ -5,10 +5,12 @@ public class Buttons : MonoBehaviour
 {
     private void Start()
     {
+        // Add a sleep timeout so it never sleeps.
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
     }
     public void GoToGame()
     {
+        // If the button that has gotogame linked to it, and is pressed the scene will switch
         SceneManager.LoadScene("Main");
     }
     public void RetryButton()
@@ -24,7 +26,6 @@ public class Buttons : MonoBehaviour
     {
         SceneManager.LoadScene("Tutorial");
     }
-
     public void GameOver()
     {
         SceneManager.LoadScene("GameOver");

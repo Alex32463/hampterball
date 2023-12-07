@@ -2609,7 +2609,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1795272950
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2755,6 +2755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c30474fb12808084faafea9aa0eedc54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
   rb: {fileID: 1832839005}
 --- !u!114 &1832839013
 MonoBehaviour:
@@ -2772,7 +2773,6 @@ MonoBehaviour:
   point: {fileID: 942630091}
   distanceText: {fileID: 596165424}
   highScoreText: {fileID: 138256044}
-  numberOfHighScoresToShow: 3
   distance: 0
 --- !u!1 &1833545008
 GameObject:
