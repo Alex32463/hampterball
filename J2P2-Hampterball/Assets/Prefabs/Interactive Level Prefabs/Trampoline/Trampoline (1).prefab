@@ -56,8 +56,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.771731
-  m_Center: {x: 0, y: 0.27173102, z: 0}
+  m_Radius: 1.0952013
+  m_Center: {x: 0, y: 0.59520125, z: 0}
 --- !u!114 &2043820244099065060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,6 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pressedE: 0
+  audioSource: {fileID: 0}
 --- !u!95 &5762172945776011239
 Animator:
   serializedVersion: 5
