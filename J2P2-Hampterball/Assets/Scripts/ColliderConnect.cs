@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ColliderConnect : MonoBehaviour
 {
-
     [SerializeField] private Collider collider;
     // Update is called once per frame
     void FixedUpdate()
