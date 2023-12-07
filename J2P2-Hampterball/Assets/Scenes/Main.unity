@@ -1952,6 +1952,74 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1001 &1025769394
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4175315082148375220, guid: 765bcd5999b7f0040b23a1bd935053df,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175315082148375220, guid: 765bcd5999b7f0040b23a1bd935053df,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175315082148375220, guid: 765bcd5999b7f0040b23a1bd935053df,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175315082148375220, guid: 765bcd5999b7f0040b23a1bd935053df,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175315082148375220, guid: 765bcd5999b7f0040b23a1bd935053df,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175315082148375220, guid: 765bcd5999b7f0040b23a1bd935053df,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175315082148375220, guid: 765bcd5999b7f0040b23a1bd935053df,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175315082148375220, guid: 765bcd5999b7f0040b23a1bd935053df,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175315082148375220, guid: 765bcd5999b7f0040b23a1bd935053df,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175315082148375220, guid: 765bcd5999b7f0040b23a1bd935053df,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5864930332154898654, guid: 765bcd5999b7f0040b23a1bd935053df,
+        type: 3}
+      propertyPath: m_Name
+      value: BoxingGlove
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 765bcd5999b7f0040b23a1bd935053df, type: 3}
 --- !u!1 &1067844334
 GameObject:
   m_ObjectHideFlags: 0
@@ -3138,3 +3206,4 @@ SceneRoots:
   - {fileID: 2112486427}
   - {fileID: 233665085}
   - {fileID: 942630091}
+  - {fileID: 1025769394}
