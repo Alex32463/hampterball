@@ -10,23 +10,19 @@ public class ManageHamster : MonoBehaviour
     int index;
 
     [SerializeField] Rigidbody[] bodypartsRb;
-    Transform[] bodyparts;
+    [SerializeField] Transform[] bodyparts;
     [SerializeField] public List<Vector3> bodypartTransform;
     [SerializeField] public List<quaternion> bodypartRotation;
 
     [SerializeField] float distance;
     //[serializefield] Transform hamsterlocation;
-    Vector3 insideball;
+    [SerializeField] Transform insideball;
 
     // Start is called before the first frame update
     void Start()
     {
 
         index = 0;
-        bodyparts = GetComponentsInChildren<Transform>();
-        bodypartsRb = GetComponentsInChildren<Rigidbody>();
-        insideball = new Vector3(0.0f, -0.0015f, 0.0f);
-        transform.position = insideball;
 
         foreach (Transform t in bodyparts)
         {
@@ -42,24 +38,33 @@ public class ManageHamster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        foreach (Transform t in bodyparts)
+        {
+            distance = Vector3.Distance(t.position, insideball.position);
+            Debug.Log(distance);
+        }
 
-        distance = Vector3.Distance(transform.position, insideball);
-        Debug.Log(distance);
+
+        Debug.Log(insideball.position);
 
         if (distance >= 3)
         {
 
-
+            transform.position = insideball.position;
+            
             foreach (Transform t in bodyparts)
             {
-                foreach (Rigidbody rb in bodypartsRb)
                 {
-                    rb.useGravity = false;
-                    rb.isKinematic = true;
+                    foreach (Rigidbody rb in bodypartsRb)
+                    {
+                        rb.useGravity = false;
+                        rb.isKinematic = true;
+
+                    }
+                    t.localPosition = bodypartTransform[index];
+                    t.localRotation = bodypartRotation[index];
+                    index++;
                 }
-                t.localPosition = bodypartTransform[index];
-                t.localRotation = bodypartRotation[index];
-                index++;
             }
             index = 0;
             foreach (Rigidbody rb in bodypartsRb)
