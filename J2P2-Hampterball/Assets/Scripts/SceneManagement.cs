@@ -9,22 +9,24 @@ public class SceneManagement : MonoBehaviour
     GameObject player;
     void Start()
     {
+        //Sets the gameObjects position to be positioned under the level
         gameObject.transform.position = new Vector3(gameObject.transform.position.x, -4, gameObject.transform.position.z);
-        player = FindObjectOfType<Movement>().gameObject; // Zoekt Player GameObject
+        player = FindObjectOfType<Movement>().gameObject; // Searches For Player GameObject
     }
 
     void Update()
     {
+        //if the player isn't null
         if (player != null)
         {
-            // Als de Player lager is dan de gameObject (SceneManagement) ga naar aangegeven scene.
+            // If the players position.y is lower than the gameObjects position.y then load the scene (HamsterPlinko)
             if (player.transform.position.y < gameObject.transform.position.y)
             {
-                PlinkoScene(SceneManager.LoadScene); // Pakt HamsterPlinko scene
+                PlinkoScene(SceneManager.LoadScene); // Grabs HamsterPlinko scene
             }
         }
     }
-    // Pakt alle informatie voor GameOver Scene
+    // Grabs all the information of HamsterPlinko Scene
     public void PlinkoScene(Action<string, LoadSceneMode> loadScene)
     {
         SceneManager.LoadScene("HamsterPlinko");
