@@ -20,13 +20,13 @@ public class SceneManagement : MonoBehaviour
             // Als de Player lager is dan de gameObject (SceneManagement) ga naar aangegeven scene.
             if (player.transform.position.y < gameObject.transform.position.y)
             {
-                GameOverScene(SceneManager.LoadScene); // Pakt GameOver scene
+                PlinkoScene(SceneManager.LoadScene); // Pakt HamsterPlinko scene
             }
         }
     }
     // Pakt alle informatie voor GameOver Scene
-    public void GameOverScene(Action<string, LoadSceneMode> loadScene)
+    public void PlinkoScene(Action<string, LoadSceneMode> loadScene)
     {
-        SceneManager.LoadScene("GameOver");
+        SceneManager.LoadScene("Hamster Plinko");
     }
 }
