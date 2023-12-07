@@ -612,7 +612,7 @@ MonoBehaviour:
   - {fileID: 9152707099084730837, guid: 3be08fc6a638ba047b6812a4b4c5fae4, type: 3}
   - {fileID: 8708216611485255332, guid: bc46e0600fe04ce47a77d6c9f3cb0d58, type: 3}
   - {fileID: 4741276264852320807, guid: 1e3e49333a0a1d640900673d39cf3b79, type: 3}
-  courseWidth: 3
+  courseWidth: 2
   initialGenerateAhead: 5
   tileSize: 42
   generateDistance: 200
@@ -1952,74 +1952,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1067844334}
   m_CullTransparentMesh: 1
---- !u!1001 &1168488497
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3028514353023601865, guid: b792b81ba00e9a14496723203b412502,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 84
-      objectReference: {fileID: 0}
-    - target: {fileID: 3028514353023601865, guid: b792b81ba00e9a14496723203b412502,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3028514353023601865, guid: b792b81ba00e9a14496723203b412502,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -42
-      objectReference: {fileID: 0}
-    - target: {fileID: 3028514353023601865, guid: b792b81ba00e9a14496723203b412502,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3028514353023601865, guid: b792b81ba00e9a14496723203b412502,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3028514353023601865, guid: b792b81ba00e9a14496723203b412502,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3028514353023601865, guid: b792b81ba00e9a14496723203b412502,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3028514353023601865, guid: b792b81ba00e9a14496723203b412502,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3028514353023601865, guid: b792b81ba00e9a14496723203b412502,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3028514353023601865, guid: b792b81ba00e9a14496723203b412502,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7663428199488263857, guid: b792b81ba00e9a14496723203b412502,
-        type: 3}
-      propertyPath: m_Name
-      value: Chunk00 (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b792b81ba00e9a14496723203b412502, type: 3}
 --- !u!65 &1251409113 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 5301295947645771860, guid: f584d9986aa41cf4ea40fd318b3bb136,
@@ -2129,7 +2061,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 95a1c179de803354794b9351c3fe584c,
         type: 3}
       propertyPath: m_TagString
-      value: HamsterBall
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3451118302482216456, guid: 95a1c179de803354794b9351c3fe584c,
         type: 3}
@@ -2600,7 +2532,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1795272950
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2620,7 +2552,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -167, y: -25}
+  m_AnchoredPosition: {x: -167, y: -24.999939}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1795272951
@@ -3163,7 +3095,6 @@ SceneRoots:
   - {fileID: 797914198}
   - {fileID: 746658349}
   - {fileID: 451470260}
-  - {fileID: 1168488497}
   - {fileID: 2112486427}
   - {fileID: 233665085}
   - {fileID: 942630091}
