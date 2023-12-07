@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: e2d5934e05a4e634eac4b301e22e2842
+  - enabled: 1
+    path: Assets/Scenes/HamsterPlinko.unity
+    guid: e44d32344e0876644a33b845da772545
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
       guid: 215c941aabddf024993095f696091f7e, type: 2}

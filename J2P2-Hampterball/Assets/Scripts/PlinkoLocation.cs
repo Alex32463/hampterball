@@ -33,7 +33,7 @@ public class PlinkoLocation : MonoBehaviour
     {
         yield return new WaitForSeconds(6);
         GameOverScene(SceneManager.LoadScene);
-
+        
     }
     public void GameOverScene(Action<string, LoadSceneMode> loadScene)
     {

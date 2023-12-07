@@ -24,6 +24,11 @@ public class Buttons : MonoBehaviour
     {
         SceneManager.LoadScene("Tutorial");
     }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene("GameOver");
+    }
     public void LeaveGame()
     {
         Application.Quit();

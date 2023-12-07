@@ -27,6 +27,6 @@ public class SceneManagement : MonoBehaviour
     // Pakt alle informatie voor GameOver Scene
     public void PlinkoScene(Action<string, LoadSceneMode> loadScene)
     {
-        SceneManager.LoadScene("Hamster Plinko");
+        SceneManager.LoadScene("HamsterPlinko");
     }
 }
