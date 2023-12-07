@@ -12,7 +12,7 @@ public class HighscoreScript : MonoBehaviour
     [SerializeField] public Transform point;
     [SerializeField] public TMP_Text distanceText;
     [SerializeField] public TMP_Text highScoreText;
-    [SerializeField] private int numberOfHighScoresToShow = 5; // Number of top scores to display
+    [SerializeField] private int numberOfHighScoresToShow = 3; // Number of top scores to display
 
     private List<float> highScores = new List<float>(); // List to store the high scores
     public float distance;
