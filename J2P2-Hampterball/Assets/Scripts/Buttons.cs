@@ -19,6 +19,7 @@ public class Buttons : MonoBehaviour
     }
     public void MainMenu()
     {
+        // When the player enters the main menu scene from the pause menu. The time is then set back to regular.
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }
@@ -29,9 +30,5 @@ public class Buttons : MonoBehaviour
     public void GameOver()
     {
         SceneManager.LoadScene("GameOver");
-    }
-    public void LeaveGame()
-    {
-        Application.Quit();
     }
 }
