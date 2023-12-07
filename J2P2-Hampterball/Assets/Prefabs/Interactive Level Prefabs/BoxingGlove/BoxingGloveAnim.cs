@@ -21,7 +21,7 @@ public class BoxingGloveAnimation : MonoBehaviour
     void Update()
     {
         // Creates the raycast
-        Physics.Raycast(transform.position, transform.forward, out hit, 3.2f, hitMask);
+        Physics.Raycast(transform.position, transform.forward, out hit, 3.2f * 3, hitMask);
 
         // Raycast checking if a player is hit
         if (hit.collider != null) 

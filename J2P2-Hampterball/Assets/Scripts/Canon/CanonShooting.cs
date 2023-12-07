@@ -54,5 +54,6 @@ public class CanonShooting : MonoBehaviour
         Debug.Log("Force");
         smokeParticles.Play();
         hamsterBallRb.AddForce(ballDirection);
+        hamsterBallRb.freezeRotation = false;
     }
 }
